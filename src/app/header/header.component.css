@@ -1,0 +1,10 @@
+.img-profil {
+    height: 80px;
+    width: 100px
+}
+
+.dropdown {
+	position: absolute;
+    right: 15px;
+    top: 5px;
+}
