@@ -2,9 +2,9 @@ export class Client {
 
     id: number | undefined;
     nom_complet: string | undefined;
-    telephone: string | undefined ;
+    telephone: string | undefined;
     email: string | undefined;
-    adresse: string | undefined ;
+    adresse: string | undefined;
   
     constructor(
         _id?: number | undefined, _nom_complet?: string | undefined,
@@ -16,5 +16,4 @@ export class Client {
       this.email = _email;
       this.adresse = _adresse;
     }
-  
-  }
+}

@@ -10,15 +10,17 @@ import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ClientComponent } from './client/client.component';
+import { HotelComponent } from './hotel/hotel.component';
 
 @NgModule({
-  declarations: [					
+  declarations: [						
     AppComponent,
     LoginComponent,
     DashboardComponent,
       HeaderComponent,
       FooterComponent,
-      ClientComponent
+      ClientComponent,
+      HotelComponent
    ],
   imports: [
     BrowserModule,

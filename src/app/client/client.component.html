@@ -1,6 +1,6 @@
 <main class="container">
 
-  <div class="h2">Liste des Clients</div>
+  <div class="h2">Liste des clients</div>
   <br>
 
   <!-- <div class="row">
@@ -36,15 +36,15 @@
         <td>{{ client.email }}</td>
         <td>{{ client.adresse }}</td>
         <td>
-          <a (click)="edit(client.id)" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-edit"></i></a>
-          <a (click)="delete(client.id)" class="ps-2"><i class="fas fa-trash"></i></a>
+          <a (click)="edit(client.id)" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-edit"></i>edit</a>
+          <a (click)="delete(client.id)" class="ps-2"><i class="fas fa-trash"></i>delete</a>
         </td>
       </tr>
     </tbody>
   </table>
 
   <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary float-start"
-    (click)="resetForm()">Nouveau patient
+    (click)="resetForm()">Nouveau client
   </button>
 </main>
 
@@ -63,7 +63,7 @@
           <div class="alert alert-danger" *ngIf="error">Une erreur est survenue, veuillez vérifier votre saisie</div>
 
           <div class="mb-3">
-            <label for="prenom" class="form-label">Nom complet</label> <input type="text" class="form-control"
+            <label for="nomComplet" class="form-label">Nom complet</label> <input type="text" class="form-control"
               id="nomComplet" name="nomComplet" placeholder="Nom complet" [(ngModel)]="client.nom_complet" required
               autofocus>
           </div>
