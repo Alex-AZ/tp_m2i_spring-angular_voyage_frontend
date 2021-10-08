@@ -11,16 +11,18 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ClientComponent } from './client/client.component';
 import { HotelComponent } from './hotel/hotel.component';
+import { ResaComponent } from './resa/resa.component';
 
 @NgModule({
-  declarations: [						
+  declarations: [							
     AppComponent,
     LoginComponent,
     DashboardComponent,
       HeaderComponent,
       FooterComponent,
       ClientComponent,
-      HotelComponent
+      HotelComponent,
+      ResaComponent
    ],
   imports: [
     BrowserModule,

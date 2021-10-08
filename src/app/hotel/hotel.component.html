@@ -26,7 +26,8 @@
         <td>{{ hotel.email }}</td>
         <td>{{ hotel.ville }}</td>
         <td>
-          <a (click)="edit(hotel.id)" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-edit"></i>edit</a>
+          <a (click)="edit(hotel.id)" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+              class="fa fa-edit"></i>edit</a>
           <a (click)="delete(hotel.id)" class="ps-2"><i class="fa fa-trash"></i>delete</a>
         </td>
       </tr>
@@ -53,27 +54,27 @@
           <div class="alert alert-danger" *ngIf="error">Une erreur est survenue, veuillez vérifier votre saisie</div>
 
           <div class="mb-3">
-            <label for="nom" class="form-label">Nom</label> 
-            <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom" [(ngModel)]="hotel.nom" required autofocus>
+            <label for="nom" class="form-label">Nom</label>
+            <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom" [(ngModel)]="hotel.nom"
+              required autofocus>
           </div>
 
           <div class="mb-3">
-            <label for="etoiles" class="form-label">Nombre d'étoiles</label> 
-            <input type="number" class="form-control" id="etoiles" name="etoiles" placeholder="Nombre d'étoiles" 
-              [(ngModel)]="hotel.etoiles" required
-            >
+            <label for="etoiles" class="form-label">Nombre d'étoiles</label>
+            <input type="number" class="form-control" id="etoiles" name="etoiles" placeholder="Nombre d'étoiles"
+              [(ngModel)]="hotel.etoiles" required>
           </div>
 
           <div class="mb-3">
-            <label for="adresse" class="form-label">Adresse</label> 
-            <input type="text" class="form-control" id="adresse" name="adresse" placeholder="Adresse" minlength="2" 
-              [(ngModel)]="hotel.adresse" required
-            >
+            <label for="adresse" class="form-label">Adresse</label>
+            <input type="text" class="form-control" id="adresse" name="adresse" placeholder="Adresse" minlength="2"
+              [(ngModel)]="hotel.adresse" required>
           </div>
 
           <div class="mb-3">
-            <label for="telephone" class="form-label">Téléphone</label> <input type="text" class="form-control" id="telephone"
-              name="telephone" placeholder="Téléphone" minlength="5" [(ngModel)]="hotel.telephone" required>
+            <label for="telephone" class="form-label">Téléphone</label> <input type="text" class="form-control"
+              id="telephone" name="telephone" placeholder="Téléphone" minlength="5" [(ngModel)]="hotel.telephone"
+              required>
           </div>
 
           <div class="mb-3">
