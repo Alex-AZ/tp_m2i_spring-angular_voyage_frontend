@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Client } from '../classes/client';
-import { Hotel } from '../classes/hotel';
-import { Reservation } from '../classes/resa';
+import { Client } from '../models/client';
+import { Hotel } from '../models/hotel';
+import { Reservation } from '../models/resa';
 import { ClientService } from '../services/client.service';
 import { HotelService } from '../services/hotel.service';
 import { ReservationService } from '../services/reservation.service';
@@ -23,18 +23,20 @@ export class ResaComponent implements OnInit {
 
   error: boolean = false;
 
+  search: String = "";
+
   constructor(public rs: ReservationService, private cs: ClientService, private hs: HotelService) { }
 
   ngOnInit(): void {
     this.loadResa();
 
-    this.cs.loadClients().subscribe(
+    this.cs.loadClients("").subscribe(
       data => {
         this.clients = data;
       }
     );
 
-    this.hs.loadHotels().subscribe(
+    this.hs.loadHotels("").subscribe(
       data => {
         this.hotels = data;
       }
@@ -42,7 +44,7 @@ export class ResaComponent implements OnInit {
   }
 
   loadResa(): void {
-    this.rs.loadResas().subscribe(
+    this.rs.loadResas(this.search).subscribe(
       data => {
         this.resas = data;
       }

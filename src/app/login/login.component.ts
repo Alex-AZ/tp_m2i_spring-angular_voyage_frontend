@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../services/admin.service';
 import { Router } from '@angular/router';
+import { Admin } from '../models/admin';
 
 @Component({
   selector: 'app-login',
@@ -26,7 +27,7 @@ export class LoginComponent implements OnInit {
       data => {
         console.log(data);
         if (data.id > 0) {
-          sessionStorage.setItem("connectedAdmin", data);
+          sessionStorage.setItem("connectedAdmin", data.username);
           console.log("redirection");
           this.router.navigate(['dashboard'])
         } else {

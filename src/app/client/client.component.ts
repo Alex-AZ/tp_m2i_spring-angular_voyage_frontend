@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Client } from '../classes/client';
+import { Client } from '../models/client';
 import { ClientService } from '../services/client.service';
 
 @Component({
@@ -16,6 +16,8 @@ export class ClientComponent implements OnInit {
 
   error: boolean = false;
 
+  search: String = "";
+
   constructor(public cs: ClientService) { }
 
   ngOnInit(): void {
@@ -23,7 +25,7 @@ export class ClientComponent implements OnInit {
   }
 
   loadClient(): void {
-    this.cs.loadClients().subscribe(
+    this.cs.loadClients(this.search).subscribe(
       data => {
         this.clients = data;
       }

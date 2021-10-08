@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Hotel } from '../classes/hotel';
+import { Hotel } from '../models/hotel';
 import { HotelService } from '../services/hotel.service';
 
 @Component({
@@ -16,6 +16,8 @@ export class HotelComponent implements OnInit {
 
   error: boolean = false;
 
+  search: String = "";
+
   constructor(public hs: HotelService) { }
 
   ngOnInit(): void {
@@ -23,7 +25,7 @@ export class HotelComponent implements OnInit {
   }
 
   loadHotel(): void {
-    this.hs.loadHotels().subscribe(
+    this.hs.loadHotels(this.search).subscribe(
       data => {
         this.hotels = data;
       }

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Client } from '../classes/client';
+import { Client } from '../models/client';
 import { httpOptions } from '../variables';
 
 @Injectable({
@@ -12,7 +12,7 @@ export class ClientService {
 
   constructor(private http: HttpClient) { }
 
-  loadClients(): Observable<Client[]> {
+  loadClients(search: String): Observable<Client[]> {
     console.log("Chargement des clients !");
 
     return this.http.get<Client[]>(environment.apiUrl + "client", httpOptions);

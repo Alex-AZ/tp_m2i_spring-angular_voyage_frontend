@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Hotel } from '../classes/hotel';
+import { Hotel } from '../models/hotel';
 import { httpOptions } from '../variables';
 
 @Injectable({
@@ -12,7 +12,7 @@ export class HotelService {
 
   constructor(private http: HttpClient) { }
 
-  loadHotels(): Observable<Hotel[]> {
+  loadHotels(search: String): Observable<Hotel[]> {
     console.log("Chargement des hôtels !");
 
     return this.http.get<Hotel[]>(environment.apiUrl + "hotel", httpOptions);

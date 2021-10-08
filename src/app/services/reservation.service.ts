@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Reservation } from '../classes/resa';
+import { Reservation } from '../models/resa';
 import { httpOptions } from '../variables';
 
 @Injectable({
@@ -12,10 +12,16 @@ export class ReservationService {
 
   constructor(private http: HttpClient) { }
 
-  loadResas(): Observable<Reservation[]> {
+  loadResas(search?: String): Observable<Reservation[]> {
     console.log("Chargement des résas !");
 
-    return this.http.get<Reservation[]>(environment.apiUrl + "resa", httpOptions);
+    let searchCondition = "";
+
+    if (search != undefined && search.length > 0) {
+      searchCondition = "?search=" + search;
+    }
+
+    return this.http.get<Reservation[]>(environment.apiUrl + "resa" + searchCondition, httpOptions);
   }
 
   addResa(resa: Reservation): Observable<Reservation> {
