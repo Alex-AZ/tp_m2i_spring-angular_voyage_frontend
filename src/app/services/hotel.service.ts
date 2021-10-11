@@ -12,7 +12,7 @@ export class HotelService {
 
   constructor(private http: HttpClient) { }
 
-  loadHotels(search: String): Observable<Hotel[]> {
+  loadHotels(): Observable<Hotel[]> {
     console.log("Chargement des hôtels !");
 
     return this.http.get<Hotel[]>(environment.apiUrl + "hotel", httpOptions);

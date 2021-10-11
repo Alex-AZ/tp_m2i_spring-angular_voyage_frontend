@@ -19,24 +19,24 @@ export class ResaComponent implements OnInit {
   clients: Array<Client> = [];
   hotels: Array<Hotel> = [];
 
-  @ViewChild('closebutton') closebuttonelement: any;
-
   error: boolean = false;
 
-  search: String = "";
+  search: string = "";
+
+  @ViewChild('closebutton') closebuttonelement: any;
 
   constructor(public rs: ReservationService, private cs: ClientService, private hs: HotelService) { }
 
   ngOnInit(): void {
     this.loadResa();
 
-    this.cs.loadClients("").subscribe(
+    this.cs.loadClients().subscribe(
       data => {
         this.clients = data;
       }
     );
 
-    this.hs.loadHotels("").subscribe(
+    this.hs.loadHotels().subscribe(
       data => {
         this.hotels = data;
       }

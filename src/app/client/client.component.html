@@ -17,7 +17,7 @@
     <tbody>
       <tr *ngFor="let client of clients">
         <td>{{ client.id }}</td>
-        <td>{{ client.nom_complet }}</td>
+        <td>{{ client.nomComplet }}</td>
         <td>{{ client.telephone }}</td>
         <td>{{ client.email }}</td>
         <td>{{ client.adresse }}</td>
@@ -50,7 +50,7 @@
 
           <div class="mb-3">
             <label for="nomComplet" class="form-label">Nom complet</label> <input type="text" class="form-control"
-              id="nomComplet" name="nomComplet" placeholder="Nom complet" [(ngModel)]="client.nom_complet" required
+              id="nomComplet" name="nomComplet" placeholder="Nom complet" [(ngModel)]="client.nomComplet" required
               autofocus>
           </div>
 

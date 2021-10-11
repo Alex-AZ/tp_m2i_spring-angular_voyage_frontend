@@ -25,7 +25,7 @@ export class HotelComponent implements OnInit {
   }
 
   loadHotel(): void {
-    this.hs.loadHotels(this.search).subscribe(
+    this.hs.loadHotels().subscribe(
       data => {
         this.hotels = data;
       }

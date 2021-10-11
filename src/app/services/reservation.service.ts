@@ -13,15 +13,7 @@ export class ReservationService {
   constructor(private http: HttpClient) { }
 
   loadResas(search?: String): Observable<Reservation[]> {
-    console.log("Chargement des résas !");
-
-    let searchCondition = "";
-
-    if (search != undefined && search.length > 0) {
-      searchCondition = "?search=" + search;
-    }
-
-    return this.http.get<Reservation[]>(environment.apiUrl + "resa" + searchCondition, httpOptions);
+    return this.http.get<Reservation[]>(environment.apiUrl + "resa/?search=" + search, httpOptions);
   }
 
   addResa(resa: Reservation): Observable<Reservation> {

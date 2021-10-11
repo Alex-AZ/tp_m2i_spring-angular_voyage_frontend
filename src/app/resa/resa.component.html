@@ -32,11 +32,11 @@
     <tbody>
       <tr *ngFor="let resa of resas">
         <td>{{ resa.id }}</td>
-        <td>{{ resa.client?.nom_complet}}</td>
+        <td>{{ resa.client?.nomComplet}}</td>
         <td>{{ resa.hotel?.nom }}</td>
         <td>{{ resa.datedeb | date:'dd/MM/yyyy' }}</td>
         <td>{{ resa.datefin | date:'dd/MM/yyyy' }}</td>
-        <td>{{ resa.num_chambre }}</td>
+        <td>{{ resa.numChambre }}</td>
         <td>
           <a (click)="edit(resa.id)" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
               class="fa fa-edit"></i>edit</a>
@@ -71,7 +71,7 @@
               [(ngModel)]="resa.client">
               <option>Sélectionner un client</option>
               <option *ngFor="let client of clients" [ngValue]="client">
-                {{ client.nom_complet }}
+                {{ client.nomComplet }}
               </option>
             </select>
           </div>
@@ -101,7 +101,7 @@
 
           <div class="mb-3">
             <label for="numeroChambre" class="form-label">Numéro de chambre</label> <input type="number" class="form-control"
-              id="numeroChambre" name="numeroChambre" placeholder="Numéro de chambre" [(ngModel)]="resa.num_chambre"
+              id="numeroChambre" name="numeroChambre" placeholder="Numéro de chambre" [(ngModel)]="resa.numChambre"
               required>
           </div>
 

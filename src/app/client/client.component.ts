@@ -16,8 +16,6 @@ export class ClientComponent implements OnInit {
 
   error: boolean = false;
 
-  search: String = "";
-
   constructor(public cs: ClientService) { }
 
   ngOnInit(): void {
@@ -25,7 +23,7 @@ export class ClientComponent implements OnInit {
   }
 
   loadClient(): void {
-    this.cs.loadClients(this.search).subscribe(
+    this.cs.loadClients().subscribe(
       data => {
         this.clients = data;
       }

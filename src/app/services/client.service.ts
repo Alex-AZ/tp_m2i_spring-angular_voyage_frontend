@@ -12,9 +12,7 @@ export class ClientService {
 
   constructor(private http: HttpClient) { }
 
-  loadClients(search: String): Observable<Client[]> {
-    console.log("Chargement des clients !");
-
+  loadClients(): Observable<Client[]> {
     return this.http.get<Client[]>(environment.apiUrl + "client", httpOptions);
   }
 
