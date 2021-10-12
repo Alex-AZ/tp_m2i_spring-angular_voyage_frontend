@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { AppComponent } from '../app.component';
 import { Hotel } from '../models/hotel';
 import { HotelService } from '../services/hotel.service';
 
@@ -18,7 +19,7 @@ export class HotelComponent implements OnInit {
 
   search: String = "";
 
-  constructor(public hs: HotelService) { }
+  constructor(public hs: HotelService, private ac: AppComponent) { }
 
   ngOnInit(): void {
     this.loadHotel();
@@ -38,6 +39,10 @@ export class HotelComponent implements OnInit {
         data => {
           this.closebuttonelement.nativeElement.click();
           this.loadHotel();
+          this.ac.success = true;
+          setTimeout(() => {
+            this.ac.success = false;
+          }, 5000);
         },
         error => {
           this.error = true;
@@ -48,6 +53,10 @@ export class HotelComponent implements OnInit {
         data => {
           this.closebuttonelement.nativeElement.click();
           this.loadHotel();
+          this.ac.success = true;
+          setTimeout(() => {
+            this.ac.success = false;
+          }, 5000);
         },
         error => {
           this.error = true;
@@ -69,7 +78,7 @@ export class HotelComponent implements OnInit {
 
   resetForm() {
     this.error = false;
-    /* this.appC.success = false; */
+    this.ac.success = false;
     this.hotel = new Hotel();
   }
 
@@ -78,7 +87,10 @@ export class HotelComponent implements OnInit {
       this.hs.deleteHotel(id).subscribe(
         data => {
           this.loadHotel();
-          /* this.appC.success = true; */
+          this.ac.success = true;
+          setTimeout(() => {
+            this.ac.success = false;
+          }, 5000);
         }
       );
     }

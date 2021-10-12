@@ -12,6 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ClientComponent } from './client/client.component';
 import { HotelComponent } from './hotel/hotel.component';
 import { ResaComponent } from './resa/resa.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [							
@@ -28,7 +29,8 @@ import { ResaComponent } from './resa/resa.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

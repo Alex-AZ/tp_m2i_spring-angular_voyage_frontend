@@ -25,8 +25,8 @@
         <th>Hôtel</th>
         <th>Date de début</th>
         <th>Date de fin</th>
-        <th>Numéro de chambre</th>
-        <th style="width:100px"><i class="fa fa-cogs"></i></th>
+        <th>Chambre</th>
+        <th style="padding-left: 20px;"><i class="material-icons">settings</i></th>
       </tr>
     </thead>
     <tbody>
@@ -38,9 +38,9 @@
         <td>{{ resa.datefin | date:'dd/MM/yyyy' }}</td>
         <td>{{ resa.numChambre }}</td>
         <td>
-          <a (click)="edit(resa.id)" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-              class="fa fa-edit"></i>edit</a>
-          <a (click)="delete(resa.id)" class="ps-2"><i class="fa fa-trash"></i>delete</a>
+          <a (click)="edit(resa.id)" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="material-icons"
+              style="color: royalblue;">edit</i></a>
+          <a (click)="delete(resa.id)" class="ps-2"><i class="material-icons" style="color: tomato;">delete</i></a>
         </td>
       </tr>
     </tbody>
@@ -89,26 +89,24 @@
 
           <div class="mb-3">
             <label for="datedeb" class="form-label">Date de début</label>
-            <input type="date" class="form-control" id="datedeb" name="datedeb"
-              [(ngModel)]="resa.datedeb" required>
+            <input type="date" class="form-control" id="datedeb" name="datedeb" [(ngModel)]="resa.datedeb" required>
           </div>
 
           <div class="mb-3">
             <label for="datefin" class="form-label">Date de fin</label>
-            <input type="date" class="form-control" id="datefin" name="datefin"
-              [(ngModel)]="resa.datefin" required>
+            <input type="date" class="form-control" id="datefin" name="datefin" [(ngModel)]="resa.datefin" required>
           </div>
 
           <div class="mb-3">
-            <label for="numeroChambre" class="form-label">Numéro de chambre</label> <input type="number" class="form-control"
-              id="numeroChambre" name="numeroChambre" placeholder="Numéro de chambre" [(ngModel)]="resa.numChambre"
-              required>
+            <label for="numeroChambre" class="form-label">Numéro de chambre</label> <input type="number"
+              class="form-control" id="numeroChambre" name="numeroChambre" placeholder="Numéro de chambre"
+              [(ngModel)]="resa.numChambre" required>
           </div>
 
         </div>
         <div class="modal-footer justify-content-between">
           <button type="reset" class="btn btn-danger float-end">Annuler</button>
-          <button type="submit" class="btn btn-secondary" id="submitbtn">Valider</button>
+          <button type="submit" class="btn btn-primary" id="submitbtn">Valider</button>
         </div>
       </div>
     </form>

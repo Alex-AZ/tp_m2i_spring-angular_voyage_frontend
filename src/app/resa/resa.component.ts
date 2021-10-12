@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { AppComponent } from '../app.component';
 import { Client } from '../models/client';
 import { Hotel } from '../models/hotel';
 import { Reservation } from '../models/resa';
@@ -25,7 +26,7 @@ export class ResaComponent implements OnInit {
 
   @ViewChild('closebutton') closebuttonelement: any;
 
-  constructor(public rs: ReservationService, private cs: ClientService, private hs: HotelService) { }
+  constructor(public rs: ReservationService, private cs: ClientService, private hs: HotelService, private ac: AppComponent) { }
 
   ngOnInit(): void {
     this.loadResa();
@@ -57,6 +58,10 @@ export class ResaComponent implements OnInit {
         data => {
           this.closebuttonelement.nativeElement.click();
           this.loadResa();
+          this.ac.success = true;
+          setTimeout(() => {
+            this.ac.success = false;
+          }, 5000);
         },
         error => {
           this.error = true;
@@ -67,6 +72,10 @@ export class ResaComponent implements OnInit {
         data => {
           this.closebuttonelement.nativeElement.click();
           this.loadResa();
+          this.ac.success = true;
+          setTimeout(() => {
+            this.ac.success = false;
+          }, 5000);
         },
         error => {
           this.error = true;
@@ -96,7 +105,7 @@ export class ResaComponent implements OnInit {
 
   resetForm() {
     this.error = false;
-    /* this.appC.success = false; */
+    this.ac.success = false;
     this.resa = new Reservation();
   }
 
@@ -105,7 +114,10 @@ export class ResaComponent implements OnInit {
       this.rs.deleteResa(id).subscribe(
         data => {
           this.loadResa();
-          /* this.appC.success = true; */
+          this.ac.success = true;
+          setTimeout(() => {
+            this.ac.success = false;
+          }, 5000);
         }
       );
     }

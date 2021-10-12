@@ -8,12 +8,12 @@
       <tr>
         <th>id</th>
         <th>Nom</th>
-        <th>Nombre d'étoiles</th>
+        <th>Étoiles</th>
         <th>Adresse</th>
         <th>Téléphone</th>
         <th>Mail</th>
         <th>Ville</th>
-        <th style="width:100px"><i class="fa fa-cogs"></i></th>
+        <th style="padding-left: 20px;"><i class="material-icons">settings</i></th>
       </tr>
     </thead>
     <tbody>
@@ -26,9 +26,9 @@
         <td>{{ hotel.email }}</td>
         <td>{{ hotel.ville }}</td>
         <td>
-          <a (click)="edit(hotel.id)" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-              class="fa fa-edit"></i>edit</a>
-          <a (click)="delete(hotel.id)" class="ps-2"><i class="fa fa-trash"></i>delete</a>
+          <a (click)="edit(hotel.id)" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="material-icons"
+              style="color: royalblue;">edit</i></a>
+          <a (click)="delete(hotel.id)" class="ps-2"><i class="material-icons" style="color: tomato;">delete</i></a>
         </td>
       </tr>
     </tbody>
@@ -89,7 +89,7 @@
         </div>
         <div class="modal-footer justify-content-between">
           <button type="reset" class="btn btn-danger float-end">Annuler</button>
-          <button type="submit" class="btn btn-secondary" id="submitbtn">Valider</button>
+          <button type="submit" class="btn btn-primary" id="submitbtn">Valider</button>
         </div>
       </div>
     </form>

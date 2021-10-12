@@ -1,8 +1,8 @@
 <header id="header" *ngIf="guard.isConnected()">
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4" style="min-height: 96px;">
+  <nav class="navbar sticky-top navbar-expand-lg navbar-light mb-4" style="min-height: 70px; background-color: #e3f2fd;">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Voyage Extra 🌍</a>
+      <a class="navbar-brand">🌍 Voyage Extra</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -25,13 +25,9 @@
           </li>
         </ul>
 
-        <div class="div">
-          <p>Bienvenue {{ user }} !</p>
-        </div>
-        
         <div class="float-end">
           <div class="dropdown dropstart">
-            <button class="border-0 dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+            <button class="border-0 dropdown-toggle" style="background-color: #e3f2fd;" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
               aria-expanded="false">
               <img src="/assets/images/voyage_profil.jpeg" alt="Photo de profil" class="img-profil rounded-circle">
             </button>
@@ -41,7 +37,6 @@
               <li><a class="dropdown-item" (click)="onLogout()">Logout</a></li>
             </ul>
           </div>
-
         </div>
       </div>
     </div>

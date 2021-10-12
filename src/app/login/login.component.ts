@@ -25,10 +25,8 @@ export class LoginComponent implements OnInit {
   authenticate() {
     this.as.authenticate(this.a).subscribe(
       data => {
-        console.log(data);
         if (data.id > 0) {
           sessionStorage.setItem("connectedAdmin", data.username);
-          console.log("redirection");
           this.router.navigate(['dashboard'])
         } else {
           this.error = true;

@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { AppComponent } from '../app.component';
 import { Client } from '../models/client';
 import { ClientService } from '../services/client.service';
 
@@ -16,7 +17,7 @@ export class ClientComponent implements OnInit {
 
   error: boolean = false;
 
-  constructor(public cs: ClientService) { }
+  constructor(public cs: ClientService, private ac: AppComponent) { }
 
   ngOnInit(): void {
     this.loadClient();
@@ -36,6 +37,10 @@ export class ClientComponent implements OnInit {
         data => {
           this.closebuttonelement.nativeElement.click();
           this.loadClient();
+          this.ac.success = true;
+          setTimeout(() => {
+            this.ac.success = false;
+          }, 5000);
         },
         error => {
           this.error = true;
@@ -46,6 +51,10 @@ export class ClientComponent implements OnInit {
         data => {
           this.closebuttonelement.nativeElement.click();
           this.loadClient();
+          this.ac.success = true;
+          setTimeout(() => {
+            this.ac.success = false;
+          }, 5000);
         },
         error => {
           this.error = true;
@@ -67,7 +76,7 @@ export class ClientComponent implements OnInit {
 
   resetForm() {
     this.error = false;
-    /* this.appC.success = false; */
+    this.ac.success = false; 
     this.client = new Client();
   }
 
@@ -76,7 +85,10 @@ export class ClientComponent implements OnInit {
       this.cs.deleteClient(id).subscribe(
         data => {
           this.loadClient();
-          /* this.appC.success = true; */
+          this.ac.success = true; 
+          setTimeout(() => {
+            this.ac.success = false;
+          }, 5000);
         }
       );
     }

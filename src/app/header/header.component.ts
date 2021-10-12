@@ -8,12 +8,10 @@ import { AuthentificationGuard } from '../authentification.guard';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  user : any;
 
   constructor(public router: Router, public guard: AuthentificationGuard) { }
 
   ngOnInit() {
-    this.user = sessionStorage.getItem("connectedAdmin");
   }
 
   onLogout(): void {
